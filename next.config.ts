@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const config: NextConfig = {
+  reactStrictMode: true,
+  turbopack: { root: __dirname },
+  async redirects() {
+    return [
+    ];
+  },
 };
 
-export default nextConfig;
+export default config;
