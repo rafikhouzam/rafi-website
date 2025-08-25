@@ -23,7 +23,13 @@
 /* Your components */
 @layer components {
   .container { max-width: 70rem; margin: 0 auto; padding: 0 1rem; }
-
+  @media (min-width: 768px) {
+    .section {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+  .prose-tight h2 { margin-bottom: .5rem; }
   .btn {
     display: inline-flex;
     align-items: center;
@@ -75,4 +81,9 @@
     outline: 2px solid color-mix(in oklab, var(--fg) 40%, transparent);
     outline-offset: 2px;
   }
+}
+  @layer components {
+  .btn { transition: transform .12s ease, box-shadow .12s ease; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+  .btn:focus-visible { outline: 2px solid color-mix(in oklab, var(--fg, #0f172a) 40%, transparent); outline-offset: 2px; }
 }

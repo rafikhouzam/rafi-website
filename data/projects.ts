@@ -54,9 +54,44 @@ impact: [
 'Interpretability-first for frontline teams'
 ],
 stack: ['Python', 'Pandas', 'Streamlit', 'Excel'],
-tags: ['Analytics', 'Dashboards']
+tags: ['Analytics', 'Dashboards'],
+links: { github: 'https://github.com/rafikhouzam/StreamlitDashboard' }
 }
 ]
 
-
+projects.push(
+  {
+    slug: 'ecomm-analysis',
+    title: 'E‑comm Analysis Toolkit',
+    summary: 'SKU‑level sales analysis with cohort views and promo lift.',
+    problem: 'Tricky to spot trends across retailers and time windows.',
+    solution: 'Streamlit app with cached Pandas queries + retailer filters.',
+    impact: ['Reduced weekly reporting time by ~70%', 'Surfaced promo opportunities'],
+    stack: ['Python','Pandas','Streamlit'],
+    tags: ['Analytics'],
+    links: { github: 'https://github.com/rafikhouzam/StreamlitDashboard' }
+  },
+  {
+    slug: 'image-cleanup',
+    title: 'Image Cleanup & Auto‑Renaming',
+    summary: 'Batch cleans, dedupes, and renames 19k photos to S3‑ready paths.',
+    problem: '~193k product images with inconsistent filenames, mismatched metadata, and duplicate content with no standard method for searching',
+    solution: 'OpenCV preproc + rules engine; outputs canonical names & folders.',
+    impact: ['19k images standardized', 'Instant S3 pathing', 'Backbone of the image search'],
+    stack: ['Python','OpenCV','Boto3'],
+    tags: ['Automation'],
+    links: { github: 'https://github.com/rafikhouzam/ImageCleanup' }
+  },
+  {
+    slug: 'backoffice-tagging',
+    title: 'Back Office Tagging Tool',
+    summary: 'A Streamlit-based tool for tagging jewelry images with consistent metadata, used for preparing datasets for Stable Diffusion (LoRA) training and building a text-based image search system.',
+    problem: 'Auto tags not perfect → needed quick human confirmation UI.',
+    solution: 'Gamified Streamlit review queue with dropdowns & bulk ops.',
+    impact: ['Tag accuracy ↑', 'Turnaround time ↓'],
+    stack: ['Python','CLIP','Streamlit'],
+    tags: ['ML Ops'],
+    links: { github: 'https://github.com/rafikhouzam/streamlit-tagging' }
+  }
+)
 export default projects

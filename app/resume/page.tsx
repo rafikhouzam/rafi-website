@@ -5,8 +5,7 @@ export default function ResumePage() {
 return (
 <div className="space-y-10">
 <header className="prose">
-<h1>Resume</h1>
-<p className="text-slate-600 dark:text-slate-400">Interactive overview. PDF export can be added later.</p>
+<h1 className="text-4xl md:text-5xl font-semibold tracking-tight">Resume</h1>
 </header>
 
 
