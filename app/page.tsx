@@ -7,14 +7,19 @@ export default function HomePage() {
 const highlights = projects.slice(0, 3)
 return (
 <div className="space-y-12">
-<section className="prose">
-<h1>Rafi Khouzam</h1>
-<p className="text-lg">Data Engineer & Builder. I design reliable data flows and ship internal tools that save time and uncover signal.</p>
-<div className="flex gap-3">
-<Link href="/portfolio" className="btn btn-primary">View Portfolio</Link>
-<Link href="/resume" className="btn btn-ghost">View Resume</Link>
-</div>
+<section className="section">
+  <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
+    Data Engineer & Builder
+  </h1>
+  <p className="mt-3 text-slate-600 dark:text-slate-400 max-w-prose">
+    I build fast, traceable data tools, embeddings-powered search, and analytics that ship.
+  </p>
+  <div className="mt-6 flex gap-3">
+    <a className="btn btn-primary" href="/resume">View Resume</a>
+    <a className="btn" href="/portfolio">See Projects</a>
+  </div>
 </section>
+
 
 
 <section>
