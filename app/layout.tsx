@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import { Analytics } from "@vercel/analytics/next"
 import HashRedirector from "./HashRedirector";
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main className="container py-10 md:py-14">{children}</main>
         <Footer />
+        <Analytics />
         </div>
       </body>
     </html>
