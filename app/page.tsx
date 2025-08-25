@@ -15,8 +15,8 @@ return (
     I build fast, traceable data tools, embeddings-powered search, and analytics that ship.
   </p>
   <div className="mt-6 flex gap-3">
-    <a className="btn btn-primary" href="/resume">View Resume</a>
-    <a className="btn" href="/portfolio">See Projects</a>
+    <Link href="/resume" className="btn btn-primary">View Resume</Link>
+    <Link href="/portfolio" className="btn">See Projects</Link>
   </div>
 </section>
 
@@ -33,7 +33,7 @@ return (
 
 
 <section>
-<h2 className="text-xl font-semibold mb-4">Recent Writing</h2>
+<h2 className="text-xl font-semibold mb-4">Recent Thoughts</h2>
 <p className="text-sm text-slate-600 dark:text-slate-400">Blog coming soon.</p>
 </section>
 </div>
