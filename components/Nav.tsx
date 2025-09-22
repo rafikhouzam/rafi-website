@@ -7,9 +7,9 @@ const links = [
 { href: '/', label: 'Home' },
 { href: '/blog', label: 'Blog' },
 { href: '/resume', label: 'Resume' },
-{ href: '/portfolio', label: 'Portfolio' }
+{ href: '/portfolio', label: 'Portfolio' },
+{ href: '/work', label: 'Work With Me' }
 ]
-
 
 export default function Nav() {
 const pathname = usePathname()

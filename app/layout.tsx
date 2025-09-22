@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     url: "https://rafikhouzam.com",
     images: ["/og.jpg"],
   },
+  icons: {
+    icon: "/icon.ico",       // general browsers
+    shortcut: "/icon.ico",   // fallback
+    apple: "/icon_180.png",      // iOS home screen
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
