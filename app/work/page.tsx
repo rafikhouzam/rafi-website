@@ -5,7 +5,7 @@ export default function WorkWithMe() {
       <h1 className="text-4xl font-bold mb-4">Work With Me</h1>
       <p className="text-lg text-gray-600 mb-10">
         I help small businesses and founders get fast, modern websites that look great on any device. 
-        Clean design, mobile-friendly, and built to convert –without the technical headaches.
+        Clean design, mobile-friendly, and built to convert without the technical headaches.
       </p>
 
       {/* Packages */}

@@ -1,24 +1,38 @@
 import fs from "fs"
 import path from "path"
-import matter from "gray-matter"
-import { remark } from "remark"
-import html from "remark-html"
+import { compileMDX } from "next-mdx-remote/rsc"
+import { useMDXComponents } from "@/components/mdx-components"
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+const postsDirectory = path.join(process.cwd(), "content/blog")
+
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
   const { slug } = await params
-  const filePath = path.join(process.cwd(), "content/blog", `${slug}.md`)
-  const fileContents = fs.readFileSync(filePath, "utf-8")
 
-  const { data, content } = matter(fileContents)
-  const processedContent = await remark().use(html).process(content)
-  const contentHtml = processedContent.toString()
+  const filePath = path.join(postsDirectory, `${slug}.mdx`)
+  const source = fs.readFileSync(filePath, "utf-8")
 
+  // compileMDX v5 with App Router
+  const { content, frontmatter } = await compileMDX<{
+    title: string
+    date: string
+    description?: string
+  }>({
+    source,
+    options: { parseFrontmatter: true },
+    components: useMDXComponents({}),
+  })
+console.log(content)
   return (
-    <article>
-      <h1 className="text-3xl font-bold mb-2">{data.title}</h1>
-      <p className="text-gray-500 mb-6">{data.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-    </article>
-  )
-}
+  <article className="prose prose-slate dark:prose-invert max-w-3xl mx-auto">
+    <h1>{<b>{frontmatter.title}</b>}</h1>
+    <p className="text-gray-500">{frontmatter.date}</p>
+    {content}
+  </article>
 
+)
+
+}

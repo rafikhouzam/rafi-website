@@ -1,9 +1,12 @@
 import Link from 'next/link'
 import ProjectCard from '@/components/ProjectCard'
+import BlogCard from "@/components/BlogCard"
 import projects from '@/data/projects'
+import { getLatestPost } from "../lib/posts"
 
 
 export default function HomePage() {
+const latest = getLatestPost()
 const highlights = projects.slice(0, 3)
 return (
 <div className="space-y-12">
@@ -24,18 +27,29 @@ return (
 
 <section>
 <h2 className="text-xl font-semibold mb-4">Highlighted Projects</h2>
-<div className="grid md:grid-cols-2 gap-4">
-{highlights.map(p => (
-<ProjectCard key={p.slug} project={p} />
-))}
-</div>
+  <div className="grid md:grid-cols-2 gap-4">
+    {highlights.map(p => (
+      <ProjectCard key={p.slug} project={p} />
+    ))}
+  </div>
 </section>
 
 
-<section>
-<h2 className="text-xl font-semibold mb-4">Recent Thoughts</h2>
-<p className="text-sm text-slate-600 dark:text-slate-400">Blog coming soon.</p>
-</section>
+<section className="mt-12">
+      <h2 className="text-xl font-semibold mb-4">Recent Thoughts</h2>
+      {latest ? (
+        <BlogCard
+          slug={latest.slug}
+          title={latest.title}
+          date={latest.date}
+          description={latest.description}
+        />
+      ) : (
+        <p className="text-sm text-slate-600 dark:text-slate-400">
+          Blog coming soon.
+        </p>
+      )}
+    </section>
 </div>
 )
 }

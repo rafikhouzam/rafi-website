@@ -1,24 +1,25 @@
-// components/ProjectCard.tsx
-import Link from "next/link";
-import type { Project } from "@/data/projects";
+import Link from "next/link"
+import type { Project } from "@/data/projects"
 
-type Props = { project: Project };
+type Props = { project: Project }
 
 export default function ProjectCard({ project }: Props) {
   return (
     <Link
       href={`/portfolio/${project.slug}`}
-      className="card p-4 block hover:-translate-y-0.5 transition"
+      className="card"
     >
       <div className="mb-2 flex flex-wrap gap-2">
         {project.tags?.slice(0, 3).map((t) => (
-          <span key={t} className="tag">{t}</span>
+          <span key={t} className="tag">
+            {t}
+          </span>
         ))}
       </div>
-      <h3 className="font-semibold mb-1">{project.title}</h3>
-      <p className="text-sm text-slate-600 dark:text-slate-400">
+      <h3 className="card-title">{project.title}</h3>
+      <p className="card-subtext">
         {project.summary}
       </p>
     </Link>
-  );
+  )
 }

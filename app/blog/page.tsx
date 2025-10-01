@@ -2,6 +2,8 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import Link from "next/link"
+import { getAllPosts } from "@/lib/posts"
+import BlogCard from "@/components/BlogCard"
 
 interface PostMeta {
   slug: string
@@ -21,29 +23,33 @@ export default function BlogPage() {
     const { data } = matter(fileContents)
 
     return {
-      slug: filename.replace(".md", ""),
+      slug: filename.replace(".mdx", ""),
       title: data.title as string,
       date: data.date as string,
       description: data.description as string,
+      pinned: Boolean(data.pinned),
     }
+  })
+  posts.sort((a: any, b: any) => {
+    if (a.pinned && !b.pinned) return -1
+    if (!a.pinned && b.pinned) return 1
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
   })
 
   return (
-    <div>
+    <section>
       <h1 className="text-3xl font-bold mb-6">Blog</h1>
-      <ul>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
-          <li key={post.slug} className="mb-6">
-            <Link href={`/blog/${post.slug}`}>
-              <h2 className="text-xl font-semibold hover:underline">
-                {post.title}
-              </h2>
-            </Link>
-            <p className="text-gray-500">{post.date}</p>
-            <p>{post.description}</p>
-          </li>
+          <BlogCard
+            key={post.slug}
+            slug={post.slug}
+            title={post.title}
+            date={post.date}
+            description={post.description}
+          />
         ))}
-      </ul>
-    </div>
+      </div>
+    </section>
   )
 }
