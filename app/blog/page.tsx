@@ -1,8 +1,6 @@
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
-import Link from "next/link"
-import { getAllPosts } from "@/lib/posts"
 import BlogCard from "@/components/BlogCard"
 
 interface PostMeta {
@@ -10,6 +8,7 @@ interface PostMeta {
   title: string
   date: string
   description: string
+  pinned: boolean
 }
 
 const postsDirectory = path.join(process.cwd(), "content/blog")
@@ -30,7 +29,7 @@ export default function BlogPage() {
       pinned: Boolean(data.pinned),
     }
   })
-  posts.sort((a: any, b: any) => {
+  posts.sort((a: PostMeta, b: PostMeta) => {
     if (a.pinned && !b.pinned) return -1
     if (!a.pinned && b.pinned) return 1
     return new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -40,7 +39,7 @@ export default function BlogPage() {
     <section>
       <h1 className="text-3xl font-bold mb-6">Blog</h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {posts.map((post) => (
+        {posts.map((post: PostMeta) => (
           <BlogCard
             key={post.slug}
             slug={post.slug}

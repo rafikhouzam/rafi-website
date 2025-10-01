@@ -23,7 +23,7 @@ export default async function BlogPost({
   }>({
     source,
     options: { parseFrontmatter: true },
-    components: useMDXComponents({}),
+    components: useMDXComponents,
   })
 console.log(content)
   return (
