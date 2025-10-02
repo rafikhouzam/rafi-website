@@ -9,33 +9,25 @@ export default function HomePage() {
 const latest = getLatestPost()
 const highlights = projects.slice(0, 3)
 return (
-<div className="space-y-12">
-<section className="section">
-  <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
+<div className="landing">
+<section className="landing-hero">
+  <h1>
     Data Engineer & Builder
   </h1>
-  <p className="mt-3 text-slate-600 dark:text-slate-400 max-w-prose">
-    I build fast, traceable data tools, embeddings-powered search, and analytics that ship.
-  </p>
-  <div className="mt-6 flex gap-3">
-    <Link href="/resume" className="btn btn-primary">View Resume</Link>
-    <Link href="/portfolio" className="btn">See Projects</Link>
+  <div className="gradient-bar"></div>
+
+  <div className='text-center py-5'>
+    <a>
+    I build fast, efficient data tools, embeddings-powered search, and analytics that make a real difference (I hope). I go outside whenever I can. Sometimes I write. Sometimes I read. Sometimes I do absolutely nothing.
+    </a>
+  </div>
+  <div className="mt-6 flex gap-3 justify-center">
+    <Link href="/experience" className="btn">View My Experience</Link>
+    <Link href="/portfolio" className="btn">See My Projects</Link>
   </div>
 </section>
 
-
-
-<section>
-<h2 className="text-xl font-semibold mb-4">Highlighted Projects</h2>
-  <div className="grid md:grid-cols-2 gap-4">
-    {highlights.map(p => (
-      <ProjectCard key={p.slug} project={p} />
-    ))}
-  </div>
-</section>
-
-
-<section className="mt-12">
+<section className="landing-blog inline-block">
       <h2 className="text-xl font-semibold mb-4">Recent Thoughts</h2>
       {latest ? (
         <BlogCard
@@ -49,7 +41,17 @@ return (
           Blog coming soon.
         </p>
       )}
-    </section>
+</section>
+
+<section className="landing-projects">
+  <h2>Highlighted Projects</h2>
+    <div className="grid md:grid-cols-2 gap-4">
+      {highlights.map(p => (
+        <ProjectCard key={p.slug} project={p} />
+      ))}
+    </div>
+</section>
+
 </div>
 )
 }

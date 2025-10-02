@@ -16,10 +16,12 @@ export default function ProjectCard({ project }: Props) {
           </span>
         ))}
       </div>
-      <h3 className="card-title">{project.title}</h3>
-      <p className="card-subtext">
+      <div className="project-card-content">
+      <h3 >{project.title}</h3>
+      <p >
         {project.summary}
       </p>
+      </div>
     </Link>
   )
 }

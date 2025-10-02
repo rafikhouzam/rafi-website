@@ -18,13 +18,11 @@ export default function BlogCard({
   return (
     <Link href={`/blog/${slug}`} className="block">
       <div className={`card ${className}`}>
-        <div className="mb-2 flex flex-wrap gap-2">
-            <span className="tag">{date}</span>
+        <div className="project-card-content">
+          <h3>{title}</h3>
+          <p className="tag inline-flex">{date}</p>
+          <p>{description}</p>
         </div>
-        <h3 className="card-title">{title}</h3>
-        <p className="card-subtext">
-          {description}
-        </p>
       </div>
     </Link>
   )

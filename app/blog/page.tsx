@@ -36,19 +36,35 @@ export default function BlogPage() {
   })
 
   return (
-    <section>
-      <h1 className="text-3xl font-bold mb-6">Blog</h1>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {posts.map((post: PostMeta) => (
-          <BlogCard
-            key={post.slug}
-            slug={post.slug}
-            title={post.title}
-            date={post.date}
-            description={post.description}
-          />
-        ))}
-      </div>
-    </section>
+    <div className="blog-landing">
+      {/* Hero Section */}
+      <section className="blog-landing py-10 text-center">
+        {/* subtle gradient glow background */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-amber-500/10 via-pink-500/10 to-violet-500/10 blur-3xl"></div>
+
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-none">
+          Blog
+        </h1>
+        <p className="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          Thoughts and reflections on life, work, and everything else in between.
+        </p>
+        <div className="gradient-bar"></div>
+      </section>
+
+      {/* Blog Grid */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post: PostMeta) => (
+            <BlogCard
+              key={post.slug}
+              slug={post.slug}
+              title={post.title}
+              date={post.date}
+              description={post.description}
+            />
+          ))}
+        </div>
+      </section>
+    </div>
   )
 }

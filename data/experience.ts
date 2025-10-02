@@ -1,4 +1,4 @@
-const resume = {
+const experience = {
 experience: [
 {
 company: 'Aneri Jewels',
@@ -31,11 +31,11 @@ skills: [
 'Python', 'Pandas', 'SQL', 'Streamlit', 'FAISS', 'CLIP', 'AWS (S3, EC2)', 'Git', 'Data Modeling'
 ],
 education: {
-school: 'Boston College — Morrissey College of Arts & Sciences',
+school: 'Boston College',
 degree: 'B.A. in Computer Science',
-when: 'May 2024'
+when: 'Class of 2024'
 }
 }
 
 
-export default resume
+export default experience

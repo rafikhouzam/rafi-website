@@ -25,10 +25,11 @@ export default async function BlogPost({
     options: { parseFrontmatter: true },
     components: useMDXComponents,
   })
-console.log(content)
+//console.log(content)
+
   return (
-  <article className="prose prose-slate dark:prose-invert max-w-3xl mx-auto">
-    <h1>{<b>{frontmatter.title}</b>}</h1>
+  <article className="blog-content max-w-3xl mx-auto">
+    <h2>{<b>{frontmatter.title}</b>}</h2>
     <p className="text-gray-500">{frontmatter.date}</p>
     {content}
   </article>
