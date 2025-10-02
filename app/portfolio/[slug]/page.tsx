@@ -14,7 +14,7 @@ export default async function ProjectDetail({
   if (!project) return notFound();
 
   return (
-    <div className="grid gap-8 md:grid-cols-[1fr_320px]">
+    <div className="landing grid gap-8 md:grid-cols-[1fr_320px]">
       <article className="space-y-8">
         <div className="text-sm text-slate-500 dark:text-slate-400">
           <Link href="/portfolio" className="hover:underline">
@@ -23,23 +23,22 @@ export default async function ProjectDetail({
         </div>
 
         <header className="space-y-3">
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
+          <h1 className="">
             {project.title}
           </h1>
-          <p className="text-slate-600 dark:text-slate-400">{project.summary}</p>
+          <a className="text-slate-600 dark:text-slate-400">{project.summary}</a>
           {project.tags?.length ? (
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mt-3">
               {project.tags.map((t) => (
                 <span key={t} className="tag">{t}</span>
               ))}
             </div>
           ) : null}
         </header>
-
         <Section title="Problem"><p>{project.problem}</p></Section>
         <Section title="Solution"><p>{project.solution}</p></Section>
         <Section title="Impact">
-          <ul className="list-disc pl-5 space-y-1">
+          <ul className="check-bullets space-y-1">
             {project.impact.map((i, idx) => <li key={idx}>{i}</li>)}
           </ul>
         </Section>
@@ -47,24 +46,21 @@ export default async function ProjectDetail({
 
       <aside className="space-y-4 md:sticky md:top-6 h-max">
         <div className="card p-4">
-          <h3 className="font-semibold mb-2">Tech Stack</h3>
+          <h2 className="font-semibold">Tech Stack</h2>
           <div className="flex flex-wrap gap-2">
             {project.stack.map((s) => <span key={s} className="tag">{s}</span>)}
           </div>
         </div>
 
         {project.links?.github && (
-          <div className="card p-4">
-            <h3 className="font-semibold mb-2">Links</h3>
             <a
-              className="btn btn-primary w-full justify-center"
+              className="btn w-full justify-center"
               href={project.links.github}
               target="_blank"
               rel="noreferrer"
             >
               View on GitHub
             </a>
-          </div>
         )}
       </aside>
     </div>

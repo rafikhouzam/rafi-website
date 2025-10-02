@@ -6,6 +6,7 @@ interface BlogCardProps {
   date: string
   description: string
   className?: string
+  pinned?: boolean
 }
 
 export default function BlogCard({
@@ -14,12 +15,18 @@ export default function BlogCard({
   date,
   description,
   className = "",
+  pinned = false,
 }: BlogCardProps) {
   return (
     <Link href={`/blog/${slug}`} className="block">
       <div className={`card ${className}`}>
         <div className="project-card-content">
-          <h3>{title}</h3>
+          <header className="mb-6">
+            <div className="flex items-center gap-2">
+              {pinned && <span className="text-lg">📌</span>}
+                <h3 className="text-3xl font-bold">{title}</h3>
+            </div>
+          </header>
           <p className="tag inline-flex">{date}</p>
           <p>{description}</p>
         </div>

@@ -36,7 +36,7 @@ export default function BlogPage() {
   })
 
   return (
-    <div className="blog-landing">
+    <div className="landing">
       {/* Hero Section */}
       <section className="blog-landing py-10 text-center">
         {/* subtle gradient glow background */}
@@ -45,10 +45,10 @@ export default function BlogPage() {
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-none">
           Blog
         </h1>
-        <p className="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+        <div className="gradient-bar my-7"></div>
+        <a>
           Thoughts and reflections on life, work, and everything else in between.
-        </p>
-        <div className="gradient-bar"></div>
+        </a>
       </section>
 
       {/* Blog Grid */}
@@ -61,6 +61,7 @@ export default function BlogPage() {
               title={post.title}
               date={post.date}
               description={post.description}
+              pinned={post.pinned}
             />
           ))}
         </div>

@@ -27,7 +27,7 @@ export default function Nav() {
     return (
     <div className={`nav ${scrolled ? "is-scrolled" : ""}`}>
       <nav className="container mx-auto px-4 flex items-center justify-between py-3">
-        <Link href="/" className="font-semibold tracking-tight">
+        <Link href="/" className="font-monaco font-semibold tracking-tight">
           Rafi Khouzam
         </Link>
         <ul className="flex items-center gap-4 text-sm">

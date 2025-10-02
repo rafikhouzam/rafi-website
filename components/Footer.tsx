@@ -16,7 +16,7 @@ return (
     alt="Github"
     width={24}
     height={24}
-    className="github"
+    className="h-6 w-6 transition dark:invert dark:brightness-200"
   />
 </a>
 <a
@@ -29,7 +29,7 @@ return (
     alt="LinkedIn"
     width={24}
     height={24}
-    className="linkedin"
+    className="h-6 w-6 transition dark:invert dark:brightness-200"
   />
 
 </a>
@@ -43,7 +43,7 @@ return (
     alt="Email"
     width={24}
     height={24}
-    className="email"
+    className="h-6 w-6 transition dark:invert dark:brightness-200"
   />
 
 </a>

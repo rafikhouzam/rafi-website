@@ -7,7 +7,7 @@ type ExperienceCardProps = {
 
 export default function ExperienceCard({ role, company, dates, points }: ExperienceCardProps) {
   return (
-    <div className="card p-4">
+    <div className="experience-card p-4">
       <div className="flex items-baseline justify-between gap-4">
         <h3 className="font-semibold">
           {role} — {company}

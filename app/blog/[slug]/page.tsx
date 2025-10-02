@@ -18,7 +18,7 @@ export default async function BlogPost({
   // compileMDX v5 with App Router
   const { content, frontmatter } = await compileMDX<{
     title: string
-    date: string
+    date?: string
     description?: string
   }>({
     source,
