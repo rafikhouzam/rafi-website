@@ -3,6 +3,7 @@ import ProjectCard from '@/components/ProjectCard'
 import BlogCard from "@/components/BlogCard"
 import projects from '@/data/projects'
 import { getLatestPost } from "../lib/posts"
+import HeroTitle from '@/components/HeroTitle'
 
 
 export default function HomePage() {
@@ -11,9 +12,7 @@ const highlights = projects.slice(0, 3)
 return (
 <div className="landing">
 <section className="landing-hero">
-  <h1>
-    Data Engineer & Builder
-  </h1>
+    <HeroTitle />
   <div className="gradient-bar"></div>
 
   <div className='text-center py-5'>

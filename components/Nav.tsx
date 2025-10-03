@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-
+import RunningStickman from "@/components/RunningStickman"
 
 const links = [
 { href: '/', label: 'Home' },
@@ -26,11 +26,11 @@ export default function Nav() {
 
     return (
     <div className={`nav ${scrolled ? "is-scrolled" : ""}`}>
-      <nav className="container mx-auto px-4 flex items-center justify-between py-3">
-        <Link href="/" className="font-monaco font-semibold tracking-tight">
+      <nav className="w-full flex items-center justify-between px-6 py-3">
+        <Link href="/" className="font-monaco text-xl font-semibold tracking-tight">
           Rafi Khouzam
         </Link>
-        <ul className="flex items-center gap-4 text-sm">
+        <ul className="flex items-center gap-4 text-lg">
           {links.map((l) => (
             <li key={l.href}>
               <Link
@@ -42,6 +42,7 @@ export default function Nav() {
             </li>
           ))}
         </ul>
+          <RunningStickman />
       </nav>
     </div>
   )
