@@ -12,7 +12,7 @@ export default function RunningStickman() {
     <div
       className={`absolute top-2 left-0 w-12 h-12 animate-stickman ${
         isBlogPost ? "animate-paused" : ""
-      }`}
+      } dark:invert`}
     >
       <Lottie
         loop
