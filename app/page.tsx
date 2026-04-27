@@ -17,7 +17,7 @@ return (
 
   <div className='text-center py-5'>
     <a>
-    I build fast, efficient data tools, embeddings-powered search, and analytics that make a real difference (I hope). I go outside whenever I can. Sometimes I write. Sometimes I read. Sometimes I do absolutely nothing.
+    I build backend systems, data pipelines, and AI-powered tools that actually get used. I go outside whenever I can. Sometimes I write. Sometimes I read. Sometimes I do absolutely nothing.
     </a>
   </div>
   <div className="mt-6 flex gap-3 justify-center">

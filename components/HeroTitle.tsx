@@ -29,7 +29,7 @@ export default function HeroTitle() {
 
   return (
     <h1 ref={titleRef} className="text-center">
-      Data Engineer & Builder
+      Software Engineer & Builder
     </h1>
   )
 }

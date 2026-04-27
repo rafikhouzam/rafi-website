@@ -13,6 +13,22 @@ links?: { github?: string; demo?: string }
 
 const projects: Project[] = [
 {
+  slug: 'job-matcher-pro',
+  title: 'JobMatcherPro (AI Job Search Agent)',
+  summary: 'Dust-powered agent that finds, scores, and applies to software engineering roles automatically - 25 high-quality applications sent in 3 days.',
+  problem: 'Each quality job application took ~20 min of manual work: finding the role, checking fit, tailoring the resume, and logging it. At 5-7 apps a day, that\'s 2+ hours of repetitive overhead daily.',
+  solution: 'Built a multi-tool Dust agent that searches the web for relevant roles, scores match fit against my resume (0-100%), generates tailored resume drafts in Google Docs, deduplicates against a Google Sheets tracker, and monitors Gmail for confirmations, rejections, and interview invites.',
+  impact: [
+    '25 high-quality applications sent in 2 days post-launch',
+    '~8 hours of manual work eliminated',
+    '10-12 high-match roles surfaced and applied to daily',
+    'End-to-end pipeline: search → score → tailor → log → track'
+  ],
+  stack: ['Dust', 'Claude Sonnet', 'Google Sheets API', 'Google Drive API', 'Gmail API', 'Web Search'],
+  tags: ['Agents', 'Automation', 'LLM'],
+  links: {}
+},
+{
 slug: 'image-search',
 title: 'Streamlit Image Search (CLIP + FAISS)',
 summary: 'Visual + text search across 18K+ product images with filters and S3-backed assets.',

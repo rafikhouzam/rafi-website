@@ -6,11 +6,11 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Rafi Khouzam — Data Engineer & Builder",
-  description: "Data Engineer building fast, traceable data tools and analytics.",
+  title: "Rafi Khouzam — Software Engineer & Builder",
+  description: "Software Engineer building fast, traceable software solutions, data tools, and analytics.",
   metadataBase: new URL("https://rafikhouzam.com"),
   openGraph: {
-    title: "Rafi Khouzam — Data Engineer & Builder",
+    title: "Rafi Khouzam — Software Engineer & Builder",
     description: "Portfolio, blog, and resume.",
     type: "website",
     url: "https://rafikhouzam.com",
